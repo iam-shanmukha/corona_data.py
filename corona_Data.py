@@ -1,7 +1,7 @@
 from covid import Covid
 import time
 import tweepy
-
+import os
 covid = Covid()
 India_cases = covid.get_status_by_country_id(27)
 
@@ -18,7 +18,7 @@ for param,val in India_cases.items():
 	#print("{} : {}".format(param,val))
 	#print(val)
 	val = str(val)
-	
+
 t=time.ctime(int(val[:10]))
 
 print(f"Last Update : {t}" + "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
