@@ -26,7 +26,9 @@ while(1):
 				val = str(val)
 			t=time.ctime(int(val[:10]))
 			api.update_status(status=f"Last Update : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
+			print("Tweeted")
 		delta_hour = now_hour
 		time.sleep(60)
+		print("waiting")
 	except tweepy.TweepError as e:
 		pass
