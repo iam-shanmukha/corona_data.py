@@ -8,7 +8,7 @@ covid = Covid()
 India_cases = covid.get_status_by_country_id(27)
 
 delta_hour = 0
-
+count = 0
 ############################Twitter########################
 consumer_key =environ['consumer_key']
 consumer_secret = environ['consumer_secret']
@@ -25,7 +25,7 @@ while(1):
 			for param,val in India_cases.items():
 				val = str(val)
 			t=time.ctime(int(val[:10]))
-			api.update_status(status=f"Last Update : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
+			api.update_status(status=f"{count=count+1}Last Update : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
 			print("Tweeted")
 		delta_hour = now_hour
 		time.sleep(60)
