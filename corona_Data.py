@@ -18,7 +18,9 @@ for param,val in India_cases.items():
 	#print("{} : {}".format(param,val))
 	#print(val)
 	val = str(val)
-#print("Last Updated : {}".format(time.ctime(int(val[:10]))))
+	
 t=time.ctime(int(val[:10]))
-#print(t)
+
+print(f"Last Update : {t}" + "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
+print(t)
 api.update_status(status=f"Last Update : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
