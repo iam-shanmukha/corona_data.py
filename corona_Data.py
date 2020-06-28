@@ -31,4 +31,4 @@ while(1):
 		time.sleep(60)
 		print("waiting")
 	except tweepy.TweepError as e:
-		pass
+		print("Duplicate")
