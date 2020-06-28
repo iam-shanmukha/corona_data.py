@@ -19,11 +19,14 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 while(1):
-	now_hour = datetime.datetime.now().hour
-	if delta_hour != now_hour:
-		for param,val in India_cases.items():
-			val = str(val)
-		t=time.ctime(int(val[:10]))
-		api.update_status(status=f"Last Update : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
-	delta_hour = now_hour
-	time.sleep(60)
+	try:
+		now_hour = datetime.datetime.now().hour
+		if delta_hour != now_hour:
+			for param,val in India_cases.items():
+				val = str(val)
+			t=time.ctime(int(val[:10]))
+			api.update_status(status=f"Last Update : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
+		delta_hour = now_hour
+		time.sleep(60)
+	except tweepy.TweepError as e:
+		pass
