@@ -1,7 +1,7 @@
 from covid import Covid
 import time
 import tweepy
-import os
+from os import *
 covid = Covid()
 India_cases = covid.get_status_by_country_id(27)
 
