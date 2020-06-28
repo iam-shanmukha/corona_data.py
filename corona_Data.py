@@ -18,7 +18,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-while:
+while(1):
     now_hour = datetime.datetime.now().hour
     if delta_hour != now_hour:
 		for param,val in India_cases.items():
