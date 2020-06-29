@@ -25,6 +25,7 @@ while(1):
 			for param,val in India_cases.items():
 				val = str(val)
 			t=time.ctime(int(val[:10]))
+			print(f"{count+1}=>Last Updated : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
 			api.update_status(status=f"{count+1}=>Last Updated : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
 			print("Tweeted")
 		delta_hour = now_hour
