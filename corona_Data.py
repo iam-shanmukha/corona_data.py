@@ -5,8 +5,7 @@ from os import *
 import datetime
 
 covid = Covid(source="worldometers")
-India_cases = covid.get_status_by_country_id(27)
-
+India_cases = covid.get_status_by_country_name("india")
 delta_hour = 0
 count = 0
 ############################Twitter########################
