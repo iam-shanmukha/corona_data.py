@@ -19,7 +19,7 @@ while(1):
 	try:
 			for param,val in India_cases.items():
 				val = str(val)
-			print(f"Last Updated : {t}" + "\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
+			print("\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
 			api.update_status(status="\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
 			print("Tweeted")
 	except tweepy.TweepError as e:
