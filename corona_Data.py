@@ -16,10 +16,8 @@ while(1):
 	try:
 		covid = Covid(source="worldometers")
 		India_cases = covid.get_status_by_country_name("india")
-		for param,val in India_cases.items():
-			val = str(val)
-			print("\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
-			api.update_status(status="\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
-			print("Tweeted")
+		print("\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
+		api.update_status(status="\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items()))
+		print("Tweeted")
 	except tweepy.TweepError as e:
 		print("Duplicate")
