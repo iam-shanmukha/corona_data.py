@@ -17,7 +17,7 @@ while(1):
 		covid = Covid(source="worldometers")
 		India_cases = covid.get_status_by_country_name("india")
 		print("\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona")
-		api.update_status(status="\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona"))
+		api.update_status(status="\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona")
 		print("Tweeted")
 	except tweepy.TweepError as e:
 		print("Duplicate")
