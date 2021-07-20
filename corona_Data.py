@@ -23,8 +23,9 @@ while(1):
 	try:
 		covid = Covid(source="worldometers")
 		India_cases = covid.get_status_by_country_name("india")
-		print("\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona")
+		#print("\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona")
 		stat="\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona"
+		print(stat)
 		api.update_status(status=stat) # sending twitter message
 		send_msg(stat) ##sending telegram message
 		print("Tweeted")
