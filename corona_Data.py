@@ -14,8 +14,8 @@ api = tweepy.API(auth)
 ########################Telegram###########################
 import requests
 def send_msg(text):
-   token = telegram_token
-   chat_id = telegram_chat_id
+   token = environ['telegram_token']
+   chat_id = environ['telegram_chat_id']
    url_req = "https://api.telegram.org/bot" + token + "/sendMessage" + "?chat_id=" + chat_id + "&text=" + text 
    results = requests.get(url_req)
    print(results.json())
