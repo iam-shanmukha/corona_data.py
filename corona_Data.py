@@ -25,7 +25,7 @@ while(1):
 		India_cases = covid.get_status_by_country_name("india")
 		#print("\n"+ "\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona")
 		stat="\n".join("{} : \t{}".format(k, v) for k, v in India_cases.items() if not k.startswith(('population','total')))+"\n#IndiaFightsCorona"
-		print(stat)
+		#print(stat)
 		api.update_status(status=stat) # sending twitter message
 		send_msg(stat) ##sending telegram message
 		print("Tweeted")
